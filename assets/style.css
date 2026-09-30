@@ -88,4 +88,23 @@ body.studio-focus .studio-floating{display:flex;position:absolute;left:max(12px,
 .laundry-corner{border:1px solid #c9d7d2;border-radius:9px;margin:12px 0;padding:10px}.laundry-corner button{width:100%;text-align:left}.laundry-corner p{font-size:13px;line-height:1.45;overflow-wrap:anywhere}#laundry-plan svg,#hall-junction-plan svg,#west-electrical-svg svg,#west-cable-svg svg,#dryer-duct-svg svg{display:block;width:100%;height:auto}#laundry-station-table table{width:100%;font-size:13px;border-collapse:collapse}#laundry-station-table td,#laundry-station-table th{padding:7px 4px;text-align:left;border-bottom:1px solid #dbe3df}#pane-laundry select{max-width:100%}
 .flooring-product-swatch{display:block;width:100%;height:92px;object-fit:cover;object-position:center;border-radius:6px;margin-bottom:9px}#flooring-cut-diagram svg{display:block;width:100%;height:auto;max-height:65vh;background:#f8faf8}#pane-flooring fieldset{min-width:0;border:1px solid #c9d7d2;border-radius:8px;padding:10px}#pane-flooring p,#pane-flooring li{overflow-wrap:anywhere}#flooring-holds{border-left:3px solid #b9513d;padding-left:8px}#flooring-draft-status{color:#966324}
 #hall-stud-diagram,#bathroom-diagram{overflow:auto;max-width:100%;border:1px solid var(--studio-line);border-radius:7px}#hall-stud-diagram svg{width:850px;min-width:850px;max-width:none}#bathroom-diagram svg{width:650px;min-width:650px;max-width:none}#pane-hall-bath li{font-size:12px;line-height:1.6;overflow-wrap:anywhere}#hall-stud-values button,#bathroom-values button{max-width:100%;text-align:left}#pane-hall-bath [data-hall-bath]:focus{outline:2px solid #ad762b}
+/* Transient ruler: no canvas interception, storage writes or survey records. */
+#studio-ruler{margin-left:auto;flex-shrink:0}#studio-ruler[aria-pressed=true],#studio-ruler-focus[aria-pressed=true]{background:#dfedf2;border-color:#165d79}
+#studio-mode-badge{min-width:0}.studio-stage-bar #studio-focus{flex-shrink:0}
+#ruler-overlay{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none}
+#studio-app #ruler-overlay svg{width:100%;height:100%;max-width:none;font:14px system-ui}
+#ruler-panel{position:absolute;left:12px;bottom:32px;z-index:6;width:min(360px,calc(100% - 24px));box-sizing:border-box;padding:10px 12px;border:1px solid #8daebc;border-radius:10px;background:#fbfdfcf5;box-shadow:0 3px 16px #153b5026;max-height:70%;overflow:auto;overscroll-behavior:contain}
+.ruler-heading{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:13px}.ruler-heading strong{flex:1}#studio-app #ruler-options-toggle{padding:6px;font-size:11px}
+#studio-app #ruler-close{min-width:42px;padding:2px;font-size:22px;border:0;background:transparent}
+#ruler-distance{display:block;font-size:23px;font-weight:700;color:#165d79;font-variant-numeric:tabular-nums}
+#ruler-components,#ruler-points,#ruler-hint,#ruler-panel small{font-size:11px;line-height:1.45;overflow-wrap:anywhere}
+#ruler-components{min-height:16px}.ruler-options{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:5px}
+#studio-app .ruler-options select{margin:3px 0 6px;min-height:42px;padding:6px}
+.ruler-actions{display:flex;gap:6px}.ruler-actions button{flex:1}
+#studio-app .ruler-actions [aria-pressed=true]{background:#dfedf2;border-color:#165d79}
+#ruler-points{margin-top:6px;color:#506b72}#ruler-panel small{display:block;color:#60747a;margin-top:5px}
+canvas.ruler-picking{cursor:crosshair}
+.studio-stage:has(#ruler-panel:not([hidden])) .studio-stage-caption{display:none}
+@media(max-width:700px){.studio-stage-bar #studio-mode-badge{max-width:calc(100% - 166px)}#ruler-panel{left:8px;bottom:26px;width:calc(100% - 16px);max-height:52%;padding:6px 10px}#ruler-distance{font-size:20px}}
+@media(max-height:500px) and (orientation:landscape){#ruler-panel{width:310px;max-height:calc(100% - 68px);bottom:6px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
