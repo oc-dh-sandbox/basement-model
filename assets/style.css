@@ -107,4 +107,8 @@ canvas.ruler-picking{cursor:crosshair}
 .studio-stage:has(#ruler-panel:not([hidden])) .studio-stage-caption{display:none}
 @media(max-width:700px){.studio-stage-bar #studio-mode-badge{max-width:calc(100% - 166px)}#ruler-panel{left:8px;bottom:26px;width:calc(100% - 16px);max-height:52%;padding:6px 10px}#ruler-distance{font-size:20px}}
 @media(max-height:500px) and (orientation:landscape){#ruler-panel{width:310px;max-height:calc(100% - 68px);bottom:6px}}
+#av-plan svg{display:block;width:100%;height:auto;max-height:480px;border:1px solid #c4d2df;border-radius:8px}
+#av-plan [data-av],#av-routes [data-av]{cursor:pointer}
+#av-crossings{max-height:320px;overflow:auto;font-size:12px}
+#pane-av-ent .studio-card p{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
